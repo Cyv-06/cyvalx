@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dream Destinations - Greece</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="peru.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-content">
+        <h1 class="site-title">Dream Destinations</h1>
+        <nav class="main-navigation">
+          <a href="../homepage/homepage.html" class="nav-link">Home</a>
+          <a href="../Biography/bios.html" class="nav-link">Bio</a>
+          <a href="../Resume/Resume.html" class="nav-link">Resume</a>
+          <a href="../Skills/Skills.html" class="nav-link">Skills</a>
+          <a href="../Contact/contact.html" class="nav-link">Contact</a>
+          <a href="../Photodump/Photo-gallery.html" class="nav-link">Gallery</a>
+          <a href="../Audio/hype.html" class="nav-link">Media</a>
+          <a href="../Places/visit.html" class="nav-link">Places</a>
+          <a href="../Bucketlist/bucket.html" class="nav-link">Bucket list</a>
+        </nav>
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <i class="ti ti-menu-2"></i>
+        </button>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <article class="destination-card">
+        <h2 class="destination-title">Greece</h2>
+
+        <section class="image-gallery">
+          <figure class="gallery-item">
+            <a href="re1 (1).jpg" target="_photos">
+              <img
+                src="re1 (1).jpg"
+                alt="Stunning sunset over Santorini's caldera"
+                class="gallery-image"
+              />
+            </a>
+            <figcaption class="image-caption">
+              Stunning sunset over Santorini's caldera
+            </figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <a href="re2.jpg" target="_photos">
+              <img
+                src="re2.jpg"
+                alt="Ancient Acropolis in Athens"
+                class="gallery-image"
+              />
+            </a>
+            <figcaption class="image-caption">
+              Ancient Acropolis in Athens
+            </figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <a href="re3.jpg" target="_photos">
+              <img
+                src="re3.jpg"
+                alt="Crystal clear waters of Navagio Beach"
+                class="gallery-image"
+              />
+            </a>
+            <figcaption class="image-caption">
+              Crystal clear waters of Navagio Beach
+            </figcaption>
+          </figure>
+        </section>
+
+        <section class="content-section">
+          <h3 class="section-title">Why Greece Is Special to Me</h3>
+          <p class="section-text">
+            Greece is where ancient history meets Mediterranean charm. From the
+            philosophical birthplace of democracy to sun-drenched islands dotted
+            with white-washed buildings, every corner tells a story spanning
+            millennia.
+          </p>
+        </section>
+
+        <section class="content-section">
+          <h3 class="section-title">How to Get There</h3>
+          <div class="cultural-grid">
+            <div class="cultural-column">
+              <h4 class="subsection-title">Flight Routes</h4>
+              <ul class="highlight-list">
+                <li>Manila (MNL) to Athens (ATH)</li>
+                <li>Common stops: Dubai or Istanbul</li>
+                <li>Flight time: 15-20 hours total</li>
+                <li>Best airlines: Emirates, Turkish</li>
+              </ul>
+            </div>
+            <div class="cultural-column">
+              <h4 class="subsection-title">Travel Requirements</h4>
+              <ul class="highlight-list">
+                <li>Schengen Visa needed</li>
+                <li>Valid for 6 months after exit</li>
+                <li>Travel insurance required</li>
+                <li>Book flights 3-6 months ahead</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="destinations-grid">
+          <article class="city-card">
+            <a href="re4.jpg" target="_photos">
+              <img
+                src="re4.jpg"
+                alt="Athens"
+                class="city-image"
+              />
+            </a>
+            <h4 class="city-title">Athens</h4>
+            <p class="city-description">
+              The cradle of Western civilization, featuring the iconic Parthenon
+              and ancient ruins alongside vibrant modern culture
+            </p>
+          </article>
+          <article class="city-card">
+            <a href="re5.jpg" target="_photos">
+              <img
+                src="re5.jpg"
+                alt="Mykonos"
+                class="city-image"
+              />
+            </a>
+            <h4 class="city-title">Mykonos</h4>
+            <p class="city-description">
+              Famous for its picturesque windmills, pristine beaches, and
+              legendary nightlife scene
+            </p>
+          </article>
+        </section>
+      </article>
+    </main>
+
+    <a href="visit.html" class="nav-button back-button">Go Back</a>
+    <button
+      class="nav-button top-button"
+      id="topButton"
+      onclick="scrollToTop()"
+    >
+      Go to Top
+    </button>
+
+    <script>
+      const topButton = document.getElementById("topButton");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 500) {
+          topButton.classList.add("show");
+        } else {
+          topButton.classList.remove("show");
+        }
+      });
+
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+    </script>
+  </body>
+</html>

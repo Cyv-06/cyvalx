@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Media Collection</title>
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="movie.css" />
+  </head>
+  <body>
+    <div
+      x-data="{
+            activeTab: 'tvshows',
+            items: {
+                tvshows: [
+                    {
+                        title: 'Breaking Bad',
+                        category: 'Drama',
+                        year: '2008-2013',
+                        director: 'Vince Gilligan',
+                        stars: ['Bryan Cranston', 'Aaron Paul'],
+                        synopsis: 'A high school chemistry teacher turned methamphetamine manufacturer partners with a former student to secure his family\'s financial future while battling cancer.',
+                        videoUrl: 'https://www.youtube.com/embed/HhesaQXLuRY'
+                    },
+                    {
+                        title: 'Stranger Things',
+                        category: 'Sci-Fi/Horror',
+                        year: '2016-Present',
+                        director: 'The Duffer Brothers',
+                        stars: ['Millie Bobby Brown', 'Finn Wolfhard', 'Winona Ryder'],
+                        synopsis: 'When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and a strange little girl.',
+                        videoUrl: 'https://www.youtube.com/embed/b9EkMc79ZSU'
+                    }
+                ],
+                movies: [
+                    {
+                        title: 'Inception',
+                        category: 'Sci-Fi/Action',
+                        year: '2010',
+                        director: 'Christopher Nolan',
+                        stars: ['Leonardo DiCaprio', 'Joseph Gordon-Levitt'],
+                        synopsis: 'A thief who steals corporate secrets through dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.',
+                        videoUrl: 'https://www.youtube.com/embed/YoHD9XEInc0'
+                    },
+                    {
+                        title: 'The Dark Knight',
+                        category: 'Action/Drama',
+                        year: '2008',
+                        director: 'Christopher Nolan',
+                        stars: ['Christian Bale', 'Heath Ledger'],
+                        synopsis: 'When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.',
+                        videoUrl: 'https://www.youtube.com/embed/EXeTwQWrcwY'
+                    }
+                ]
+            }
+        }"
+      class="min-h-screen w-screen bg-[#DAD7CD] font-[Poppins]"
+    >
+    <header class="site-header">
+        <div class="header-content">
+          <h1 class="site-title">My Media Collection</h1>
+          <nav class="main-navigation">
+            <a href="../homepage/homepage.html" class="nav-link">Home</a>
+            <a href="../Biography/bios.html" class="nav-link">Bio</a>
+            <a href="../Resume/Resume.html" class="nav-link">Resume</a>
+            <a href="../Skills/Skills.html" class="nav-link">Skills</a>
+            <a href="../Contact/contact.html" class="nav-link">Contact</a>
+            <a href="../Photodump/Photo-gallery.html" class="nav-link"
+              >Gallery</a
+            >
+            <a href="../Audio/hype.html" class="nav-link">Media</a>
+            <a href="../Places/visit.html" class="nav-link">Places</a>
+            <a href="../Bucketlist/bucket.html" class="nav-link">Bucket list</a>
+          </nav>
+          <button class="menu-toggle" aria-label="Toggle menu">
+            <i class="ti ti-menu-2"></i>
+          </button>
+        </div>
+      </header>
+
+      <main class="container mx-auto px-4 py-8">
+        <nav class="tab-navigation">
+          <button
+            x-on:click="activeTab = 'tvshows'"
+            x-bind:class="activeTab === 'tvshows' ? 'tab-active' : 'tab-inactive'"
+            class="tab-button"
+          >
+            TV Shows
+          </button>
+          <button
+            x-on:click="activeTab = 'movies'"
+            x-bind:class="activeTab === 'movies' ? 'tab-active' : 'tab-inactive'"
+            class="tab-button"
+          >
+            Movies
+          </button>
+        </nav>
+
+        <section x-show="activeTab === 'tvshows'" class="media-section">
+          <h2 class="section-title">My Film TV Shows</h2>
+          <div class="media-grid">
+            <template x-for="show in items.tvshows" :key="show.title">
+              <article class="media-card">
+                <h3 class="media-title" x-text="show.title"></h3>
+                <div class="media-details">
+                  <p class="media-category" x-text="show.category"></p>
+                  <p class="media-year" x-text="show.year"></p>
+                </div>
+                <p class="media-director">
+                  Director: <span x-text="show.director"></span>
+                </p>
+                <div class="media-stars">
+                  <h4 class="stars-title">Starring:</h4>
+                  <ul class="stars-list">
+                    <template x-for="star in show.stars" :key="star">
+                      <li x-text="star"></li>
+                    </template>
+                  </ul>
+                </div>
+                <p class="media-synopsis" x-text="show.synopsis"></p>
+                <iframe
+                  class="media-video"
+                  :src="show.videoUrl"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </article>
+            </template>
+          </div>
+        </section>
+
+        <section x-show="activeTab === 'movies'" class="media-section">
+          <h2 class="section-title">My Film Movies</h2>
+          <div class="media-grid">
+            <template x-for="movie in items.movies" :key="movie.title">
+              <article class="media-card">
+                <h3 class="media-title" x-text="movie.title"></h3>
+                <div class="media-details">
+                  <p class="media-category" x-text="movie.category"></p>
+                  <p class="media-year" x-text="movie.year"></p>
+                </div>
+                <p class="media-director">
+                  Director: <span x-text="movie.director"></span>
+                </p>
+                <div class="media-stars">
+                  <h4 class="stars-title">Starring:</h4>
+                  <ul class="stars-list">
+                    <template x-for="star in movie.stars" :key="star">
+                      <li x-text="star"></li>
+                    </template>
+                  </ul>
+                </div>
+                <p class="media-synopsis" x-text="movie.synopsis"></p>
+                <iframe
+                  class="media-video"
+                  :src="movie.videoUrl"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </article>
+            </template>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

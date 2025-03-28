@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #dad7cd;
+  }
+  
+  .portfolio-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+  }
+  
+  /* Header Styles */
+  .site-header {
+    width: 100%;
+    background-color: #344e41;
+    padding: 16px;
+  }
+  
+  .header-content {
+    width: 100%;
+    height: 32px;
+    background-color: #344e41;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .site-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #dad7cd;
+    margin-right: 32px;
+  }
+  
+  .main-navigation {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  
+  .nav-link {
+    font-size: 16px;
+    color: #DAD7CD;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    opacity: 0.5;
+  }
+  
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #dad7cd;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+  }
+  
+  .content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px); /* Adjust for header height */
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .feature-card {
+    text-align: center;
+  }
+  
+  .feature-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }

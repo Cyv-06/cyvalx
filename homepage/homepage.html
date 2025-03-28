@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-content">
+      <h1 class="site-title">Portfolio</h1>
+      <nav class="main-navigation">
+        <a href="../Biography/bios.html" class="nav-link">Bio</a>
+        <a href="../Resume/Resume.html" class="nav-link">Resume</a>
+        <a href="../Skills/Skills.html" class="nav-link">Skills</a>
+        <a href="../Contact/contact.html" class="nav-link">Contact</a>
+        <a href="../Photodump/Photo-gallery.html" class="nav-link"
+          >Gallery</a
+        >
+        <a href="../Audio/hype.html" class="nav-link">Media</a>
+        <a href="../Places/visit.html" class="nav-link">Places</a>
+        <a href="../Bucketlist/bucket.html" class="nav-link">Bucket list</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <i class="ti ti-menu-2"></i>
+      </button>
+    </div>
+  </header>
+
+    <section class="welcome-section">
+      <div class="welcome-content">
+        <h2 class="welcome-title">Welcome Message</h2>
+        <div class="video-container">
+          <iframe 
+            src="0328.mp4" 
+            frameborder="0" 
+            allowfullscreen 
+            class="responsive-video">
+          </iframe>
+        </div>
+        <p class="video-caption">Watch My Welcome Video</p>
+      </div>
+    </section>
+
+    <main class="main-content">
+      <div class="profile-container">
+        <div class="profile-info">
+          <h1 class="profile-name">Hi, I'm Yancy Valencia</h1>
+          <p class="profile-description">
+            A Student at the University of the East, Manila City, Philippines.
+          </p>
+          <button class="contact-button">Get in Touch</button>
+        </div>
+        <div class="profile-image-container">
+          <img src="download (1).jpg" alt="Profile" class="profile-image">
+        </div>
+      </div>
+    </main>
+  </div>
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('.main-navigation').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

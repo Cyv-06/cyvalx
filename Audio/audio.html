@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Media Collection</title>
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+    <header class="site-header">
+      <div class="header-content">
+        <h1 class="site-title">My Media Collection</h1>
+        <nav class="main-navigation">
+          <a href="../homepage/homepage.html" class="nav-link">Home</a>
+          <a href="../Biography/bios.html" class="nav-link">Bio</a>
+          <a href="../Resume/Resume.html" class="nav-link">Resume</a>
+          <a href="../Skills/Skills.html" class="nav-link">Skills</a>
+          <a href="../Contact/contact.html" class="nav-link">Contact</a>
+          <a href="../Photodump/Photo-gallery.html" class="nav-link"
+            >Gallery</a
+          >
+          <a href="../Audio/hype.html" class="nav-link">Media</a>
+          <a href="../Places/visit.html" class="nav-link">Places</a>
+          <a href="../Bucketlist/bucket.html" class="nav-link">Bucket list</a>
+        </nav>
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <i class="ti ti-menu-2"></i>
+        </button>
+      </div>
+    </header>
+
+    <div
+      x-data="{
+      currentAudio: null,
+      isPlaying: false,
+      scrollToTop() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+      },
+      playAudio(audioId) {
+          if (this.currentAudio) {
+              this.currentAudio.pause();
+          }
+          if (this.currentAudio && this.currentAudio.id === audioId && this.isPlaying) {
+              this.isPlaying = false;
+          } else {
+              this.currentAudio = document.getElementById(audioId);
+              this.currentAudio.play();
+              this.isPlaying = true;
+          }
+      }
+  }"
+      class="media-collection"
+    >
+      <main>
+        <!-- R&B Collection -->
+        <section id="rb-collection" class="section">
+          <h2>My Beat - Song Collection</h2>
+          <div class="media-grid">
+            <article class="media-card">
+              <img src="z1.jpg" alt="No Guidance" class="album-cover" />
+              <h3>No Guidance</h3>
+              <p>Chris Brown - Indigo (2019)</p>
+              <audio controls>
+                <source
+                  src="../mp3tomp4/Drake, Chris Brown - No Guidance (Lyrics) (mp3cut.net).mp3"
+                  type="audio/mp4"
+                />
+                Your browser does not support the audio element.
+              </audio>
+            </article>
+
+            <article class="media-card">
+              <img src="x2.jpg" alt="Blinding Lights" class="album-cover" />
+              <h3>Blinding Lights</h3>
+              <p>The Weeknd - After Hours (2020)</p>
+              <audio controls>
+                <source
+                  src="../mp3tomp4/The Weeknd - Blinding Lights (Official Audio) (mp3cut.net).mp3"
+                  type="audio/mp4"
+                />
+              </audio>
+            </article>
+
+            <article class="media-card">
+              <img src="x3.jpg" alt="Leave The Door Open" class="album-cover" />
+              <h3>Leave The Door Open</h3>
+              <p>Silk Sonic - An Evening with Silk Sonic (2021)</p>
+              <audio controls>
+                <source
+                  src="../mp3tomp4/Leave the door open (mp3cut.net).mp3"
+                  type="audio/mp4"
+                />
+              </audio>
+            </article>
+          </div>
+        </section>
+
+        <!-- Pop Collection -->
+        <section class="section">
+          <h2>My Beat - Pop Collection</h2>
+          <div class="media-grid">
+            <article class="media-card">
+              <img src="x2.webp" alt="As It Was" class="album-cover" />
+              <h3>As It Was</h3>
+              <p>Harry Styles - Harry's House (2022)</p>
+              <audio controls>
+                <source
+                  src="../mp3tomp4/Harry Styles - As It Was (Official Video) (mp3cut.net).mp3"
+                  type="audio/mp4"
+                />
+              </audio>
+            </article>
+
+            <article class="media-card">
+              <img src="x4.jpg" alt="Anti-Hero" class="album-cover" />
+              <h3>Anti-Hero</h3>
+              <p>Taylor Swift - Midnights (2022)</p>
+              <audio controls>
+                <source
+                  src="../mp3tomp4/Taylor Swift - Anti-Hero (Official Music Video) (mp3cut.net).mp3"
+                  type="audio/mp4"
+                />
+              </audio>
+            </article>
+
+            <article class="media-card">
+              <img src="x5.jpg" alt="About Damn Time" class="album-cover" />
+              <h3>About Damn Time</h3>
+              <p>Lizzo - Special (2022)</p>
+              <audio controls>
+                <source
+                  src="../mp3tomp4/Lizzo - About Damn Time (Lyrics) (mp3cut.net).mp3"
+                  type="audio/mp4"
+                />
+                Your browser does not support the audio element.
+              </audio>
+            </article>
+          </div>
+        </section>
+
+        <!-- Rock Collection -->
+        <section class="section">
+          <h2>My Beat - Rock Collection</h2>
+          <div class="media-grid">
+            <article class="media-card">
+              <img src="x6.jpg" alt="Patient Number 9" class="album-cover" />
+              <h3>Patient Number 9</h3>
+              <p>Ozzy Osbourne - Patient Number 9 (2022)</p>
+              <audio controls>
+                <source
+                  src="../mp3tomp4/Ozzy Osbourne - Patient Number 9 (Official Music Video) ft (mp3cut.net).mp3"
+                  type="audio/mp4"
+                />
+              </audio>
+            </article>
+
+            <article class="media-card">
+              <img src="x7.jpg" alt="This Is Why" class="album-cover" />
+              <h3>This Is Why</h3>
+              <p>Paramore - This Is Why (2023)</p>
+              <audio controls>
+                <source
+                  src="../mp3tomp4/Paramore_ This Is Why [OFFICIAL VIDEO] (mp3cut.net).mp3"
+                  type="audio/mp4"
+                />
+              </audio>
+            </article>
+
+            <article class="media-card">
+              <img src="x8.jpg" alt="Black Summer" class="album-cover" />
+              <h3>Black Summer</h3>
+              <p>Red Hot Chili Peppers - Unlimited Love (2022)</p>
+              <audio controls>
+                <source
+                  src="../mp3tomp4/Red Hot Chili Peppers - Black Summer (Official Music Video) (mp3cut.net).mp3"
+                  type="audio/mp4"
+                />
+              </audio>
+            </article>
+          </div>
+        </section>
+
+
+      <!-- Navigation Buttons -->
+      <div class="nav-buttons">
+        <button
+          onclick="window.location.href='../homepage/homepage.html'"
+          class="nav-btn home-btn"
+          aria-label="Go to home page"
+        >
+          Home
+        </button>
+        <button
+          onclick="window.location.href='hype.html'"
+          class="nav-btn back-btn"
+          aria-label="Go back to media library"
+        >
+          Go Back
+        </button>
+        <button
+          x-on:click="scrollToTop()"
+          class="nav-btn top-btn"
+          aria-label="Scroll to top"
+        >
+          Go Top
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
